@@ -5,6 +5,11 @@ import Welocme from './components/Welocme';
 import Produt from './components/product';
 import Form from './components/Form';
 import Rendering from './components/ٌٌRendering';
+import Lists from './components/Lists';
+import ProductList from './components/ProductList';
+import Counter from './components/Counter';
+import ConterFc from './components/ConterFc';
+// import ProductsData from './ProductsData.js';
 
 function App() {
   return (
@@ -17,6 +22,12 @@ function App() {
       <Produt title="product-2" description="the best t-shirt" number="100" />
       <Form/>
       <Rendering/>
+      <Lists/>
+      <ProductList/>
+      {/* <ProductsData/> */}
+      <Counter/>
+      <ConterFc/>
+
 
     </div>
   );

@@ -9,6 +9,8 @@ function Rendering(){
  let [isLoggedIn2, setLoggedIn2] = useState(true);
  let [isLoggedIn3, setLoggedIn3] = useState(false);
  let [isLoggedIn4, setLoggedIn4] = useState(false);
+ let [isLoggedIn5, setLoggedIn5] = useState(false);
+
 
 
  let element; 
@@ -42,8 +44,15 @@ function Rendering(){
   <button onClick={ () => {setLoggedIn4(true)} }>Login</button>
   {isLoggedIn4 ?  <Product title="product-1" description="the best car" number="50000" /> : <Guest/>}
   
+  <hr/>
+
+
+  <button onClick={ () => {setLoggedIn5(true) } }>Login</button>
+  {isLoggedIn5 ? <Product title="product-2" description="the best phone" number="11000"/> : null}
+  
   </>
  );
+
 }
 
 export default Rendering;
