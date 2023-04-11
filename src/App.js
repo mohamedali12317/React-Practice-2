@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
+import { Route , Routes } from 'react-router-dom';
 import Greeting from './components/Greeting';
 import Welocme from './components/Welocme';
 import Produt from './components/product';
@@ -18,7 +19,7 @@ import ProductList2 from './components/ProductList2';
 function App() {
   return (
     <div className="App">
-      <Greeting name="mohamed" age="25" job="front-end"/>
+      {/* <Greeting name="mohamed" age="25" job="front-end"/>
       <Greeting name="omar" age="20" job="back-end"/>
       <Welocme name="ali" title="js" />
       <Welocme name="mona" title="dev"/>
@@ -27,14 +28,17 @@ function App() {
       <Form/>
       <Rendering/>
       <Lists/>
-      <ProductList/>
+      <ProductList/> */}
+
       {/* <ProductsData/> */}
-      <Counter/>
-      <ConterFc/>
+      {/* <Counter/>
+      <ConterFc/> */}
       <ProductListApi/>
-      <Navbar/>
-      <Slider/>
-      <ProductList2/>
+      {/* <Navbar/> */}
+      {/* <Slider/>
+      <ProductList2/> */}
+
+
 
     </div>
   );
