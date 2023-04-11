@@ -9,7 +9,11 @@ import Lists from './components/Lists';
 import ProductList from './components/ProductList';
 import Counter from './components/Counter';
 import ConterFc from './components/ConterFc';
+import ProductListApi from './components/ProductListApi';
 // import ProductsData from './ProductsData.js';
+import Navbar from './components/Navbar';
+import Slider from './components/Slider';
+import ProductList2 from './components/ProductList2';
 
 function App() {
   return (
@@ -27,7 +31,10 @@ function App() {
       {/* <ProductsData/> */}
       <Counter/>
       <ConterFc/>
-
+      <ProductListApi/>
+      <Navbar/>
+      <Slider/>
+      <ProductList2/>
 
     </div>
   );

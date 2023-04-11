@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 const ConterFc = () => {
 let [counter , setcounter] = useState(0);
@@ -39,11 +39,24 @@ console.log(setvalue);
 
 // نهاية الامثلة
 
+// useEffect
+
+let [count , setcount] = useState(0);
+
+useEffect(() => {
+   document.title = `You clicked ${count} times`;
+   // console.log('here');
+});
+
+
 
  return (
   <>
      <h1>counter: {counter}</h1>
      <button onClick={() => setcounter(counter + 1)}>+</button>
+
+     <h1>counter: {count}</h1>
+     <button onClick={() => setcount(count + 1)}>+</button>
   </>
  );
 }
