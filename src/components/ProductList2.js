@@ -24,7 +24,7 @@ const ProductList2 = () => {
       {products.map((product) =>{
          return(
             <div className="col-3" key={product.id}>
-             <Poduct2 product={product} />
+             <Poduct2 product={product} showButton = "true" />
          </div>  
          )
       })}

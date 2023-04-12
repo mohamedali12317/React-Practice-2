@@ -23,6 +23,8 @@ import Navbar from './components/Navbar';
 import Slider from './components/Slider';
 import ProductList2 from './components/ProductList2';
 import Home from './home';
+import ProdutDetalis from './ProdutDetalis';
+// import Poduct2 from './components/Poduct2';
 
 import {
   createBrowserRouter,
@@ -52,6 +54,16 @@ const router = createBrowserRouter([
           <Counter/>
         <ConterFc/>
     </>,
+  },
+
+  // {
+  //   path: "product",
+  //   element:   <Poduct2 />,
+  // },
+
+  {
+    path: "product/:productid",
+    element:   <ProdutDetalis/>,
   },
 
 ]);

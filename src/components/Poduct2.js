@@ -1,11 +1,12 @@
 import React from 'react';
 // import images1 from './images/ecomblog.jpg';
+import { Link } from 'react-router-dom';
 
 
 const Poduct2 = (props) => {
   console.log(props);
 
-  const {product} = props;
+  const {product , showButton} = props;
   
  return (
   <>
@@ -21,10 +22,20 @@ const Poduct2 = (props) => {
             {/* {props.product.description} */}
 
          </p>
-        <button href="#" className="btn btn-primary">
-            Deatails
-          </button>
-      </div>
+
+         <p>price {product.price}$</p>
+
+         {/* انا بقول لو فى شو بوتون اظهر لى البتون دا */}
+         {/* {showButton && <button href="#" className="btn btn-primary"> Deatails</button> } */}
+
+        {/* <button href="#" className="btn btn-primary"> Deatails</button> */}
+
+        {/* {showButton && <Link to={'/Produt/${Produt.id}'} className="btn btn-primary"> Deatails</Link> } */}
+
+        {showButton && <Link to={`/product/${product.id}`} className="btn btn-primary"> Deatails</Link> }
+      {/*  {` / ... / ${.id} `}  */}
+
+      </div>  
     </div>
     
   </>

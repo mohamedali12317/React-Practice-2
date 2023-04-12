@@ -37,7 +37,7 @@ function App() {
       {/* <Navbar/> */}
       {/* <Slider/>
       <ProductList2/> */}
-
+    
 
 
     </div>
