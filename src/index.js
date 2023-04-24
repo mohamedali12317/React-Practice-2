@@ -25,6 +25,15 @@ import ProductList2 from './components/ProductList2';
 import Home from './home';
 import ProdutDetalis from './ProdutDetalis';
 // import Poduct2 from './components/Poduct2';
+// import Sidebar from './components/Sidebar';
+import Practice3 from './Practice3';
+import Products3 from './components/Products3';
+import Home2 from './Home2';
+import AddProducts from './components/AddProducts';
+import ProdutDetalis2 from './ProdutDetalis2';
+
+// import { Routes , Route } from 'react-router-dom';
+
 
 import {
   createBrowserRouter,
@@ -64,6 +73,56 @@ const router = createBrowserRouter([
   {
     path: "product/:productid",
     element:   <ProdutDetalis/>,
+  },
+
+  {
+    path: "/Practice3",
+    element:   <Practice3/>,
+  },
+
+  {
+  //   path: "/Practice3",
+  //   element:   <>
+  //            <Navbar/>
+  //  <div className="row">
+  //   <div className="col-2 sidebar">
+  //      <Sidebar/>
+  //   </div>
+
+  //   <div className="col-10">
+  //     <Home2/>
+  //     {/* <Products3/> */}
+  //     <Routes>
+  //      <Route path ="/Home2" element={ <Home2/>} />
+  //      <Route path ="/Products3" element={ <Products3/>} />
+  //      <Route path ="/add" element={ <AddProducts/>} />
+  //     </Routes>
+  //    </div>
+     
+  //  </div>
+  //              </>,
+  },
+
+  {
+    path: "/Home2",
+    element:   <Home2/>,
+  },
+
+  {
+    path: "/products/add",
+    element:   <AddProducts/>,
+  },
+
+  
+  {
+    path: "/Products3",
+    element:   <Products3/>,
+  },
+
+    
+  {
+    path: "/Products3/:productid",
+    element:   <ProdutDetalis2/>,
   },
 
 ]);

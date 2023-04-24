@@ -18,11 +18,17 @@ const Navbar = () => {
           <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
         </li>
         <li className="nav-item">
+          <NavLink className="nav-link"  to="/Practice3" >Home2</NavLink>
+        </li>    
+        <li className="nav-item">
           <NavLink className="nav-link"  to="/practice" >practice</NavLink>
         </li>    
         <li className="nav-item">
           <a className="nav-link"  href="https://github.com/mohamedali12317/React-Practice-Project" target="_blank" >practice2</a>
         </li>    
+        <li className="nav-item">
+          <NavLink className="nav-link"  to="/Practice3" >practice 3</NavLink>
+        </li>  
       </ul>
      
     </div>
