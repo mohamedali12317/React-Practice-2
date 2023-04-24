@@ -1,9 +1,47 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-
+import { useState } from 'react';
+import axios from 'axios';
 
 const AddProducts = () => {
+
+  let [title , setTitle]  = useState ('');
+  let [price , setPrice]  = useState (0);
+  let [description , setDescription]  = useState (0);
+
+  let formSubmit = (e) => {
+      e.preventDefault();
+
+      console.log('title' , title);
+      console.log('price' , price);
+      console.log('description' , description);
+
+      axios.post('http://localhost:3000/products' , {
+         title,
+        price,
+        description,
+      }).then( data => {
+        console.log(data);
+      })
+
+      // fetch('http://localhost:3000/products' , {
+      //   method: 'POST',
+      //   body : JSON.stringify({
+      //     title : title,
+      //     price : price
+
+      //     // or 
+      //     // title,
+      //     // price,
+      //   })
+
+      // }).then( res => res.json())
+      // .then( data => {
+      //   console.log(data);
+      // })
+  }
+
  return (
   <>
    <Navbar/>
@@ -14,6 +52,57 @@ const AddProducts = () => {
 
     <div className="col-10">
    <h1>Add Products</h1>
+
+   <form onSubmit={formSubmit}>
+  <div className="mb-3">
+    <label htmlFor="productTitle" className="form-label">
+      Title
+    </label>
+    <input
+      type="text"
+      className="form-control"
+      id="productTitle"
+      placeholder='product title'
+      aria-describedby="product title"
+
+      onChange={(e)=> setTitle(e.target.value)}
+    />
+  </div>
+
+  <div className="mb-3">
+    <label htmlFor="productPrice" className="form-label">
+      Price
+    </label>
+    <input
+      type="Number"
+      className="form-control"
+      id="productPrice"
+      placeholder='product price'
+      aria-describedby="product price"
+
+      onChange={(e)=> setPrice(e.target.value)}
+    />
+  </div>
+
+  <div className="mb-3" >
+    <label htmlFor="productDescription" className="form-label">Description</label>
+    <input
+      type="text"
+      className="form-control"
+      id="productDescription"
+      placeholder='product description'
+      aria-describedby="product description"
+      required
+      onChange={(e)=> setDescription (e.target.value)}
+    />
+  </div>
+
+
+  <button type="submit" className="btn btn-primary">
+    Add Product
+  </button>
+</form>
+
      
      </div>
      
