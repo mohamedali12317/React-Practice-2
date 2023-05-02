@@ -32,6 +32,13 @@ import Home2 from './Home2';
 import AddProducts from './components/AddProducts';
 import ProdutDetalis2 from './ProdutDetalis2';
 
+// import CategoriesDetalis from './components/CategoriesDetalis'
+import Categories from './components/Categories';
+import AddCategories from './components/addCategories';
+import DeleteCategories from './components/DeleteCategories';
+import Edit from './components/Edit';
+
+import StateLifting from './components/StateLifting';
 // import { Routes , Route } from 'react-router-dom';
 
 
@@ -39,6 +46,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
+import { RecoilRoot } from 'recoil';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +71,7 @@ const router = createBrowserRouter([
           <ProductList/>
           <Counter/>
         <ConterFc/>
+        <StateLifting/>
     </>,
   },
 
@@ -125,6 +135,32 @@ const router = createBrowserRouter([
     element:   <ProdutDetalis2/>,
   },
 
+  {
+    path: "/Products3/edit/:Productid",
+    element:   <Edit/>,
+  },
+
+  {
+    path: "/Categories",
+    element:   <Categories/>,
+  },
+
+  {
+    path: "/Categories/add",
+    element:   <AddCategories/>,
+  },
+
+  {
+    path: "/Categories/delete",
+    element:   <DeleteCategories/>,
+  },
+
+    
+  // {
+  //   path: "/Categories/:Categoriesid",
+  //   element:   <CategoriesDetalis/>,
+  // },
+
 ]);
 
 
@@ -133,12 +169,28 @@ root.render(
 
    <React.StrictMode>
    <RouterProvider router={router} />
-   
    <App/>
 
  </React.StrictMode>
+  
+  );
 
-);
+
+
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+
+//     <RecoilRoot>
+//       <App/>
+//     </RecoilRoot> 
+
+
+//   </React.StrictMode>
+
+// );
 
 // ReactDOM.createRoot(document.getElementById("root")).render(
 //   <React.StrictMode>

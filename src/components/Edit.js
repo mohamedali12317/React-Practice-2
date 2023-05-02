@@ -1,15 +1,18 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 // import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Product from './product';
 
-const AddProducts = () => {
+const Edit = () => {
 
   let [title , setTitle]  = useState ('');
   let [price , setPrice]  = useState (0);
-  let [description , setDescription]  = useState (0);
+  let [description , setDescription]  = useState ('');
+  let [ , setprodut] = useState({});
+
 
   let navigate = useNavigate(); 
 
@@ -29,8 +32,8 @@ const AddProducts = () => {
       //   navigate('/Products3');
       // })
 
-      fetch('http://localhost:3000/products' , {
-        method: 'POST',
+      fetch( `http://localhost:3000/products` , {
+        method : 'PUT' ,
         headers : { 'Content-Type': 'application/json'},
         body : JSON.stringify({
           // title : title,
@@ -50,6 +53,13 @@ const AddProducts = () => {
       })
   }
 
+  useEffect(() => {
+   fetch(`http://localhost:3000/Products3/edit/${Product.id}`).then(res => res.json()).then(result => {
+     console.log(result) ;
+     setprodut(result) ;
+   });
+  }, []);
+
  return (
   <>
    <Navbar/>
@@ -59,7 +69,7 @@ const AddProducts = () => {
     </div>
 
     <div className="col-10">
-   <h1>Add Products</h1>
+   <h1>Edit Products</h1>
 
    <form onSubmit={formSubmit}>
   <div className="mb-3">
@@ -117,6 +127,7 @@ const AddProducts = () => {
    </div>
   </>
  );
+
 }
 
-export default AddProducts;
+export default Edit;

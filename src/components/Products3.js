@@ -2,7 +2,7 @@ import React, { useEffect , useState } from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import './Pages.css'
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 
@@ -95,7 +95,7 @@ const Products3 = () => {
             <td>
               <button className="btn btn-danger btn-sm" onClick={ () => DeleteProduct(product) } >Delete</button>
               <Link to={`/Products3/${product.id}`} className="btn btn-info btn-sm">View</Link>
-              <button className="btn btn-primary btn-sm">Edit</button>
+              {/* <Link  to={`/Products3/edit/${product.id}`} className="btn btn-primary btn-sm">Edit</Link> */}
             </td>
             </tr>
            )
@@ -114,6 +114,7 @@ const Products3 = () => {
        </tbody>
         
     </table>
+    <Outlet/>
      </div>
      
    </div>

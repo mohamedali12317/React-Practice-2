@@ -10,7 +10,7 @@ const Sidebar = () => {
      </li>
 
      <li>
-      <Link href="/#">Get All Categories</Link>
+      <Link to="/Categories">Get All Categories</Link>
      </li>
 
    </ul>
